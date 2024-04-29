@@ -8,7 +8,8 @@ class EssayExtractorTest {
     public static Object[][] values() {
         return new Object[][]{
                 new Object[]{"https://www.engadget.com/2019-08-25-sony-and-yamaha-sc-1-sociable-cart.html", "Remember how we said", "next pub crawl."},
-                new Object[]{"https://www.engadget.com/2019-08-23-no-mans-sky-beyond-review.html", "If there was ever a game ", "to get back to it."}
+                new Object[]{"https://www.engadget.com/2019-08-23-no-mans-sky-beyond-review.html", "If there was ever a game ", "to get back to it."},
+                new Object[]{"https://www.engadget.com/2016-06-16-facebook-messenger-hidden-football-game.html", "Across Europe, soccer ", "surprisingly tricky."}
         };
     }
 
