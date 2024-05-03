@@ -2,6 +2,7 @@ package app;
 
 import org.junit.jupiter.api.Test;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -37,4 +38,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
             assertEquals(expectedWordCounts, wordCounts);
         }
 
-}
+        @Test
+        void testProcessEssayFilteredWords() {
+
+            // Sample essay content
+            String essayContent = "This is a sample essay. It contains words like apple, banana, and orange.";
+
+            Set<String> dictionary = new HashSet<>();
+            dictionary.add("banana");
+            dictionary.add("like");
+
+            // Process the essay content
+            Map<String, Integer> wordCounts = EssayProcessor.process(essayContent, dictionary);
+
+            // Assert that the word counts match the expected values
+            assertEquals(2, wordCounts.size());
+        }
+
+
+    }

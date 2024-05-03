@@ -15,7 +15,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<String> urls = UrlReader.readUrls(FilePathFinder.getFilePath("endg-urls-short.txt"));
+        List<String> urls = UrlReader.readUrls(FilePathFinder.getFilePath("endg-urls.txt"));
         System.out.println(urls.size() + " urls read.");
 
         // Parse web pages in parallel
@@ -52,7 +52,7 @@ public class Main {
             try {
                 return future.get();
             } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace();
+                System.err.println(e.getMessage());
                 return null;
             }
         }).collect(Collectors.toList());

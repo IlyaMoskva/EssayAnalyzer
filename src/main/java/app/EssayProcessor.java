@@ -10,16 +10,11 @@ import java.util.regex.Pattern;
 
 /**
  * Logic class to calculate words and fulfill Frequency Map
- * @Method process returns FreqMap of suitable words
+ * Method process returns FreqMap of suitable words
  * Uses Word checker to filter out non-dictionary words.
  */
 public class EssayProcessor {
     private static final Pattern WORD_PATTERN = Pattern.compile("\\b[a-zA-Z]{3,}\\b");
-    private DictionaryPreProcessor dictionaryPreProcessor;
-
-    public EssayProcessor(DictionaryPreProcessor dictionaryPreProcessor) {
-        this.dictionaryPreProcessor = dictionaryPreProcessor;
-    }
 
     public static Map<String, Integer> process(String essayContent, Set<String> dictionary) {
         Map<String, Integer> wordCounts = new HashMap<>();
@@ -31,6 +26,7 @@ public class EssayProcessor {
                 wordCounts.put(word, wordCounts.getOrDefault(word, 0) + 1);
         }
 
+        System.out.print(".");
         return wordCounts;
     }
 }

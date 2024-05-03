@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Infrastructure class to get text of Essay from specific site
  * Extract text of essay split by paragraphs
- * @Method extract Returns plain String
+ * Method extract Returns plain String
  */
 public class EssayExtractor {
     public static String extract(String url) {
