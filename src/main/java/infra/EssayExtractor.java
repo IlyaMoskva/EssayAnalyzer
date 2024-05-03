@@ -1,3 +1,5 @@
+package infra;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -8,12 +10,10 @@ import java.io.IOException;
 /**
  * Infrastructure class to get text of Essay from specific site
  * Extract text of essay split by paragraphs
- * @Method extract Returns plain String
- *
+ * Method extract Returns plain String
  */
 public class EssayExtractor {
-    public String extract(String url) {
-        // Initialize a StringBuilder to store the extracted text
+    public static String extract(String url) {
         StringBuilder sb = new StringBuilder();
 
         try {
@@ -31,11 +31,8 @@ public class EssayExtractor {
                     sb.append(paragraph.text()).append("\n");
                 }
             }
-            //TODO: Remove the following two debug lines
-            //System.out.println(sb.toString());
-            //System.out.println(sb.toString().substring(sb.length()-20));
         } catch (IOException e) {
-            System.err.println("Can't get content with given URL, reason: " + e.getMessage());
+            System.err.println(e.getMessage());
         }
         return sb.toString();
     }

@@ -1,3 +1,5 @@
+package infra;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -16,14 +18,14 @@ class EssayExtractorTest {
     @ParameterizedTest
     @MethodSource("values")
     public void extract(String url, String starts, String ends) {
-        String essay = new EssayExtractor().extract(url);
+        String essay = EssayExtractor.extract(url);
         Assertions.assertTrue(essay.startsWith(starts) && essay.contains(ends)); //TODO: figure out why .endsWith() doesn't work
     }
 
     @Test
     public void extractFailedAsNotFound() {
         String url = "https://www.engadget.com/2019-08-22-wirecutters-best-deals-acer-chromebook-11-sale.html";
-        String essay = new EssayExtractor().extract(url);
+        String essay = EssayExtractor.extract(url);
         Assertions.assertTrue(essay.isEmpty());
     }
 }
