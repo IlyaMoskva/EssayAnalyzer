@@ -17,9 +17,9 @@ class EssayExtractorTest {
 
     @ParameterizedTest
     @MethodSource("values")
-    public void extract(String url, String starts, String ends) {
+    public void extractAsPlainText(String url, String starts, String ends) {
         String essay = EssayExtractor.extract(url);
-        Assertions.assertTrue(essay.startsWith(starts) && essay.contains(ends)); //TODO: figure out why .endsWith() doesn't work
+        Assertions.assertTrue(essay.startsWith(starts) && essay.contains(ends));
     }
 
     @Test

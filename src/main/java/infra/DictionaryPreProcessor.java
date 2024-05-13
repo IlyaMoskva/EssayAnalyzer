@@ -18,6 +18,10 @@ public class DictionaryPreProcessor {
         this.dictionaryFilePath = getFilePath(dictionaryFilePath);
     }
 
+    /**
+     * PreProcess dictionary to extract only valid words to map with essays content.
+     * @return Set of words
+     */
     public Set<String> preprocess() {
         // Number of threads to use
         int numThreads = Runtime.getRuntime().availableProcessors(); // Use available processors

@@ -54,6 +54,4 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
             // Assert that the word counts match the expected values
             assertEquals(2, wordCounts.size());
         }
-
-
     }
